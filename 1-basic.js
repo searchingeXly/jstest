@@ -71,32 +71,16 @@ const menu = [
     img: "./images/item-9.jpeg",
     desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
-  {
-    id: 10,
-    title: "steak dinner",
-    category: "dinner",
-    price: 39.99,
-    img: "./images/item-10.jpeg",
-    desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
-  },
 ];
 
 const sectionCenter = document.querySelector(".section-center");
 
-const btnContainer = document.querySelector(".btn-container");
-
-// load items
 window.addEventListener("DOMContentLoaded", function () {
-  displayMenuItems(menu);
-  displayfilterButtons();
-});
+  let displayMenu = menu.map(function (item) {
+    // console.log(item);
 
-// filter items
-
-function displayMenuItems(menuItems) {
-  let displayMenu = menuItems.map(function (item) {
     return `<article class="menu-item">
-          <img src="${item.img}" alt="${item.title}" class="photo" />
+          <img src=${item.img} alt=${item.title} class="photo" />
           <div class="item-info">
             <header>
               <h4>${item.title}</h4>
@@ -109,37 +93,7 @@ function displayMenuItems(menuItems) {
         </article>`;
   });
   displayMenu = displayMenu.join("");
+  console.log(displayMenu);
+
   sectionCenter.innerHTML = displayMenu;
-}
-
-function displayfilterButtons() {
-  const categories = menu.reduce(
-    function (values, item) {
-      if (!values.includes(item.category)) {
-        values.push(item.category);
-      }
-      return values;
-    },
-    ["all"]
-  );
-  const categoryBtns = categories
-    .map(function (category) {
-      return `<button class="filter-btn" type="button" data-cat="${category}">${category}</button>`;
-    })
-    .join("");
-  btnContainer.innerHTML = categoryBtns;
-
-  const filterBtns = btnContainer.querySelectorAll(".filter-btn");
-
-  filterBtns.forEach(function (btn) {
-    btn.addEventListener("click", function (e) {
-      const category = e.currentTarget.dataset.cat;
-      const menuCategory = menu.filter(function (menuItem) {
-        if (menuItem.category === category || category === "all") {
-          return menuItem;
-        }
-      });
-      displayMenuItems(menuCategory);
-    });
-  });
-}
+});
