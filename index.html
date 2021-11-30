@@ -3,53 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Starter</title>
-    <!-- font-awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-    />
+    <title>Video</title>
+
     <!-- styles -->
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <section class="menu">
-      <!-- title -->
-      <div class="title">
-        <h2>our menu</h2>
-        <div class="underline"></div>
-      </div>
-      <!-- filter buttons -->
-      <div class="btn-container">
-        <!-- <button class="filter-btn" type="button" data-cat="all">all</button>
-        <button class="filter-btn" type="button" data-cat="breakfast">
-          breakfast
-        </button>
-        <button class="filter-btn" type="button" data-cat="lunch">lunch</button>
-        <button class="filter-btn" type="button" data-cat="shakes">
-          shakes
-        </button> -->
-      </div>
-      <!-- menu items -->
-      <div class="section-center">
-        <!-- menu item -->
-        <!-- <article class="menu-item">
-          <img src="menu-item.jpeg" alt="menu item" class="photo" />
-          <div class="item-info">
-            <header>
-              <h4>buttermilk pancakes</h4>
-              <h4 class="price">$15</h4>
-            </header>
-            <p class="item-text">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis
-              perferendis blanditiis voluptatem neque fugiat quia illo sequi
-              quisquam natus reiciendis.
-            </p>
-          </div>
-        </article> -->
-        <!-- end menu item -->
-      </div>
-    </section>
+    <!-- preloader -->
+    <div class="preloader">
+      <img src="./preloader.gif" alt="preloader" />
+    </div>
+    <!-- header -->
+    <header>
+      <video class="video-container" muted autoplay loop>
+        <source src="./video.mp4" type="video/mp4" />
+      </video>
+      <h1>video project</h1>
+      <!-- video switch -->
+      <button class="switch-btn">
+        <span> play </span>
+        <span> pause </span>
+        <span class="switch"> </span>
+      </button>
+    </header>
     <!-- javascript -->
     <script src="app.js"></script>
   </body>
