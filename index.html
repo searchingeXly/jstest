@@ -3,36 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Slider</title>
-
-    <!-- styles -->
+    <title>Counter Starter</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="slider-container">
-      <div class="slide">
-        <img src="./img-1.jpeg" alt="" class="slide-img" />
-        <h1>1</h1>
-      </div>
-      <div class="slide">
-        <h1>2</h1>
-      </div>
-      <div class="slide">
-        <h1>3</h1>
-      </div>
-      <div class="slide">
-        <div>
-          <img src="./person-1.jpeg" alt="" class="person-img" />
-          <h4>susan doe</h4>
-          <h1>4</h1>
-        </div>
+    <div class="container first-counter">
+      <h2>first counter</h2>
+      <span class="value">0</span>
+      <div class="button-container">
+        <button class="btn decrease">decrease</button>
+        <button class="btn reset">reset</button>
+        <button class="btn increase">increase</button>
       </div>
     </div>
-    <div class="btn-container">
-      <button type="button" class="prevBtn">prev</button>
-      <button type="button" class="nextBtn">next</button>
+    <div class="container second-counter">
+      <h2>second counter</h2>
+      <span class="value">0</span>
+      <div class="button-container">
+        <button class="btn decrease">decrease</button>
+        <button class="btn reset">reset</button>
+        <button class="btn increase">increase</button>
+      </div>
     </div>
-    <!-- javascript -->
-    <script src="app.js"></script>
+    <script src="app-class.js"></script>
   </body>
 </html>
