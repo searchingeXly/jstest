@@ -3,32 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cocktails</title>
+    <title>ES6 Slider Setup</title>
     <!-- font-awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
     />
-    <!-- css -->
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
 
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
   <body>
-    <form class="search-form">
-      <h2>cocktails API</h2>
-      <input
-        type="text"
-        name="drink"
-        placeholder="search your favorite cocktail"
-      />
-    </form>
-    <section class="section cocktails">
-      <article class="loading">
-        <img src="./loading.gif" alt="loading" />
-      </article>
-      <h2 class="title"></h2>
-      <div class="section-center"></div>
+    <section class="slider">
+      <div class="reviews">
+        <h2><span>/</span> reviews</h2>
+      </div>
+      <div class="slide-container"></div>
+      <button class="btn prev-btn">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button class="btn next-btn">
+        <i class="fas fa-chevron-right"></i>
+      </button>
     </section>
-    <script type="module" src="./app.js"></script>
+    <script type="module" src="app.js"></script>
   </body>
 </html>
