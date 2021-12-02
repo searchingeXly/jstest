@@ -1,23 +1,15 @@
-const btn = document.querySelector(".btn");
-const content = document.querySelector(".content");
-const img = document.querySelector(".container img");
-const url = "https://api.chucknorris.io/jokes/random";
+import get from "./utils/getElement.js";
+import getUser from "./utils/fetchUser.js";
+import displayUser from "./utils/displayUser.js";
 
-btn.addEventListener("click", async () => {
-  try {
-    const data = await fetch(url);
-    const jsonData = await data.json();
-    displayData(jsonData);
-  } catch (error) {
-    console.log(error);
-  }
-});
+const btn = get(".btn");
 
-function displayData({ value: joke }) {
-  img.classList.add("shake-img");
-  content.textContent = joke;
-  const random = Math.random() * 1000;
-  setTimeout(() => {
-    img.classList.remove("shake-img");
-  }, random);
-}
+const showUser = async () => {
+  // get user from api
+  const person = await getUser();
+  // display user
+  displayUser(person);
+};
+
+window.addEventListener("DOMContentLoaded", showUser);
+btn.addEventListener("click", showUser);
