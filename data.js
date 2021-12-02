@@ -1,22 +1,28 @@
-const people = [
+const sublinks = [
   {
-    img: "https://res.cloudinary.com/diqqf3eq2/image/upload/c_scale,w_200/v1595959121/person-1_aufeoq.jpg",
-    name: "peter doe",
-    job: "product manager",
-    text: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem quoeius recusandae officia voluptas sint deserunt dicta nihil nam omnis? `,
+    page: 'products',
+    links: [
+      { label: 'payment', icon: 'fas fa-credit-card', url: 'products.html' },
+      { label: 'terminal', icon: 'fas fa-credit-card', url: 'products.html' },
+      { label: 'connect', icon: 'fas fa-credit-card', url: 'products.html' },
+    ],
   },
   {
-    img: "https://res.cloudinary.com/diqqf3eq2/image/upload/c_scale,w_200/v1595959131/person-2_ipcjws.jpg",
-    name: "susan doe",
-    job: "developer",
-    text: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem quoeius recusandae officia voluptas sint deserunt dicta nihil nam omnis?`,
+    page: 'developers',
+    links: [
+      { label: 'plugins', icon: 'fas fa-book', url: 'products.html' },
+      { label: 'libraries', icon: 'fas fa-book', url: 'products.html' },
+      { label: 'plugins', icon: 'fas fa-book', url: 'products.html' },
+      { label: 'billing', icon: 'fas fa-book', url: 'products.html' },
+    ],
   },
   {
-    img: "https://res.cloudinary.com/diqqf3eq2/image/upload/c_scale,w_200/v1595959131/person-3_rxtqvi.jpg",
-    name: "emma doe",
-    job: "designer",
-    text: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem quoeius recusandae officia voluptas sint deserunt dicta nihil nam omnis?`,
+    page: 'company',
+    links: [
+      { label: 'about', icon: 'fas fa-briefcase', url: 'products.html' },
+      { label: 'customers', icon: 'fas fa-briefcase', url: 'products.html' },
+    ],
   },
 ];
 
-export default people;
+export default sublinks;
