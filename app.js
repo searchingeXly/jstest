@@ -1,15 +1,8 @@
-import get from "./utils/getElement.js";
-import getUser from "./utils/fetchUser.js";
-import displayUser from "./utils/displayUser.js";
+import presentDrinks from "./src/presentDrinks.js";
+import "./src/searchForm.js";
 
-const btn = get(".btn");
+const URL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=a";
 
-const showUser = async () => {
-  // get user from api
-  const person = await getUser();
-  // display user
-  displayUser(person);
-};
-
-window.addEventListener("DOMContentLoaded", showUser);
-btn.addEventListener("click", showUser);
+window.addEventListener("DOMContentLoaded", () => {
+  presentDrinks(URL);
+});

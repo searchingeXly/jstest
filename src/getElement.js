@@ -6,6 +6,8 @@ const getElement = (selection, multiple = false) => {
     const element = document.querySelector(selection);
     if (element) return element;
   }
-  throw new Error(`no element selected with selection : ${selection}`);
+
+  throw new Error(`no element selected for selection : "${selection}"`);
 };
+
 export default getElement;
