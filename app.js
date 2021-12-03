@@ -1,84 +1,43 @@
-import sublinks from "./data.js";
+import fetchFollowers from "./fetchFollowers.js";
+import displayFollowers from "./displayFollowers.js";
+import paginate from "./paginate.js";
+import displayButtons from "./displayButtons.js";
 
-const toggleBtn = document.querySelector(".toggle-btn");
-const closeBtn = document.querySelector(".close-btn");
-const sidebarWrapper = document.querySelector(".sidebar-wrapper");
-const sidebar = document.querySelector(".sidebar-links");
-const linkBtns = [...document.querySelectorAll(".link-btn")];
-const submenu = document.querySelector(".submenu");
-const hero = document.querySelector(".hero");
-const nav = document.querySelector(".nav");
+const title = document.querySelector(".section-title h1");
+const btnContainer = document.querySelector(".btn-container");
 
-// hide/show sidebar
-toggleBtn.addEventListener("click", () => {
-  sidebarWrapper.classList.add("show");
-});
-closeBtn.addEventListener("click", () => {
-  sidebarWrapper.classList.remove("show");
-});
+let index = 0;
+let pages = [];
 
-// set sidebar
-sidebar.innerHTML = sublinks
-  .map((item) => {
-    const { links, page } = item;
-    return `<article>
-  <h4>${page}</h4>
-  <div class="sidebar-sublinks">
-  ${links
-    .map((link) => {
-      return `<a href="${link.url}">
-      <i class="${link.icon}"></i>${link.label}
-      </a>`;
-    })
-    .join("")}
-  </div>
-  </article>`;
-  })
-  .join("");
+const setupUI = () => {
+  displayFollowers(pages[index]);
+  displayButtons(btnContainer, pages, index);
+};
 
-linkBtns.forEach((btn) => {
-  btn.addEventListener("mouseover", function (e) {
-    // console.log(e.currentTarget);
-    const text = e.currentTarget.textContent;
-    const tempBtn = e.currentTarget.getBoundingClientRect();
-    const center = (tempBtn.left + tempBtn.right) / 2;
-    const bottom = tempBtn.bottom - 3;
-    const tempPage = sublinks.find(({ page }) => page === text);
-    if (tempPage) {
-      const { page, links } = tempPage;
-      submenu.classList.add("show");
-      submenu.style.left = `${center}px`;
-      submenu.style.top = `${bottom}px`;
-      let columns = "col-2";
-      if (links.length === 3) {
-        columns = "col-3";
-      }
-      if (links.length >= 4) {
-        columns = "col-4";
-      }
-      submenu.innerHTML = `
-      <section>
-      <h4>${page}</h4>
-      <div class="submenu-center ${columns}">
-      ${links
-        .map((link) => {
-          return `<a href="${link.url}">
-        <i class="${link.icon}"></i> ${link.label}
-        </a>`;
-        })
-        .join("")}
-      </div>
-      </section>`;
-    }
-  });
-});
+const init = async () => {
+  const followers = await fetchFollowers();
+  title.textContent = "Pagination";
+  pages = paginate(followers);
+  setupUI();
+};
 
-hero.addEventListener("mouseover", function (e) {
-  submenu.classList.remove("show");
-});
-
-nav.addEventListener("mouseover", function (e) {
-  if (!e.target.classList.contains("link-btn")) {
-    submenu.classList.remove("show");
+btnContainer.addEventListener("click", function (e) {
+  if (e.target.classList.contains("btn-container")) return;
+  if (e.target.classList.contains("page-btn")) {
+    index = parseInt(e.target.dataset.index);
   }
+  if (e.target.classList.contains("next-btn")) {
+    index++;
+    if (index >= pages.length) {
+      index = 0;
+    }
+  }
+  if (e.target.classList.contains("prev-btn")) {
+    index--;
+    if (index < 0) {
+      index = pages.length - 1;
+    }
+  }
+  setupUI();
 });
+window.addEventListener("load", init);
