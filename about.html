@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | Comfy</title>
     <!-- font-awesome -->
     <link
       rel="stylesheet"
@@ -11,11 +12,11 @@
 
     <!-- styles css -->
     <link rel="stylesheet" href="styles.css" />
-    <title>Home | Comfy</title>
   </head>
+
   <body>
     <!-- navbar -->
-    <nav class="navbar">
+    <nav class="navbar page">
       <div class="nav-center">
         <!-- links -->
         <div>
@@ -35,7 +36,7 @@
           </ul>
         </div>
         <!-- logo -->
-        <img src="./images/logo-white.svg" class="nav-logo" alt="logo" />
+        <img src="./images/logo-black.svg" class="nav-logo" alt="logo" />
         <!-- cart icon -->
         <div class="toggle-container">
           <button class="toggle-cart">
@@ -46,11 +47,9 @@
       </div>
     </nav>
     <!-- hero -->
-    <section class="hero">
-      <div class="hero-container">
-        <h1 class="text-slanted">rest, relax, unwind</h1>
-        <h3>Embrace your choices - we do</h3>
-        <a href="products.html" class="hero-btn">shop now</a>
+    <section class="page-hero">
+      <div class="section-center">
+        <h3 class="page-hero-title">Home / About</h3>
       </div>
     </section>
     <!-- sidebar -->
@@ -127,35 +126,23 @@
         </footer>
       </aside>
     </div>
-    <!-- featured products -->
-    <section class="section featured">
+    <!-- about -->
+    <section class="section section-center about-page">
       <div class="title">
-        <h2><span>/</span> featured</h2>
+        <h2><span>/</span> our history</h2>
       </div>
-      <div class="featured-center section-center">
-        <h2 class="section-loading">loading...</h2>
-        <!-- single product -->
-        <!-- <article class="product">
-          <div class="product-container">
-            <img src="./images/main-bcg.jpeg" alt="" class="product-img img" />
-            <div class="product-icons">
-              <a href="product.html?id=1" class="product-icon">
-                <i class="fas fa-search"></i>
-              </a>
-              <button class="product-cart-btn product-icon" data-id="1">
-                <i class="fas fa-shopping-cart"></i>
-              </button>
-            </div>
-          </div>
-          <footer>
-            <p class="product-name">name</p>
-            <h4 class="product-price">$9.99</h4>
-          </footer>
-        </article> -->
-        <!-- end of single product -->
-      </div>
-      <a href="products.html" class="btn"> all products </a>
+      <p class="about-text">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet natus
+        repellendus cupiditate assumenda velit est veniam. Facilis maiores, in
+        commodi, quae modi laudantium natus placeat minima tempore eos explicabo
+        ipsam officia optio hic incidunt rem. Labore id error quisquam saepe,
+        temporibus explicabo beatae debitis totam placeat ut assumenda dolor
+        veritatis nisi et, rerum incidunt nulla laborum eos vitae vel
+        perferendis ab aliquid harum. Enim, error dolor. Voluptatibus adipisci
+        temporibus, qui aliquam veniam culpa sed illum obcaecati corporis eum
+        eaque iure!
+      </p>
     </section>
-    <script type="module" src="index.js"></script>
+    <script type="module" src="./src/pages/about.js"></script>
   </body>
 </html>
