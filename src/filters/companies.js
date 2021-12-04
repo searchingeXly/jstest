@@ -22,7 +22,7 @@ const setupCompanies = (store) => {
             product.company.toLowerCase() === element.textContent.toLowerCase()
         );
       }
-      display(filteredStore, getElement(".products-container"));
+      display(filteredStore, getElement(".products-container"), true);
     }
   });
 };

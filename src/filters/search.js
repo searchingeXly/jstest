@@ -14,7 +14,7 @@ const setupSearch = (store) => {
           return product;
         }
       });
-      display(filteredStore, getElement(".products-container"));
+      display(filteredStore, getElement(".products-container"), true);
       if (filteredStore.length < 1) {
         const products = getElement(".products-container");
         products.innerHTML = `<h3 class="filter-error">
@@ -22,7 +22,7 @@ const setupSearch = (store) => {
           </h3>`;
       }
     } else {
-      display(store, getElement(".products-container"));
+      display(store, getElement(".products-container"), true);
     }
   });
 };

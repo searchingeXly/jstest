@@ -24,7 +24,7 @@ const setupPrice = (store) => {
           sorry, no products matched your search
           </h3>`;
     } else {
-      display(filteredStore, getElement(".products-container"));
+      display(filteredStore, getElement(".products-container"), true);
     }
   });
 };
