@@ -203,3 +203,9 @@ total gaps in 3 column layout = 2 * 2rem = 64px
 .cards-center {
   grid-template-columns: repeat(auto-fill, minmax(268.5px, 1fr));
 }
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+}
