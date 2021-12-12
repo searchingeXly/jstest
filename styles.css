@@ -1,0 +1,106 @@
+/* google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400&display=swap");
+
+/* 
+===============
+Variables
+===============
+*/
+:root {
+  --clr-primaryColor: #f15025;
+  --clr-mainBlack: #222;
+  --clr-mainWhite: #fff;
+  --clr-offWhite: #f7f7f7;
+  --clr-darkGrey: #afafaf;
+  --transition: all 0.2s linear;
+  --spacing: 0.2rem;
+}
+/* 
+===============
+Global Styles
+===============
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: var(--clr-offWhite);
+  color: --clr-mainBlack;
+  line-height: 1.5;
+  font-family: "Fira Code", monospace;
+}
+a {
+  text-decoration: none;
+}
+img {
+  width: 100%;
+  display: block;
+}
+h1,
+h2,
+h3 {
+  text-transform: capitalize;
+  letter-spacing: var(--spacing);
+  margin-bottom: 1.25rem;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  margin-bottom: 0;
+}
+p {
+  font-weight: 300;
+  font-size: 0.7rem;
+  line-height: 2;
+}
+/* button */
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  text-transform: capitalize;
+  border: 3px solid var(--clr-primaryColor);
+  color: var(--clr-primaryColor);
+  margin: 3rem;
+  transition: var(--transition);
+}
+.btn:hover {
+  background: var(--clr-primaryColor);
+  color: var(--clr-offWhite);
+}
+/* 
+===============
+Main Navbar
+===============
+*/
+.main-navbar {
+  background: var(--clr-darkGrey);
+  padding: 0 2rem;
+}
+.main-navbar li {
+  list-style-type: none;
+}
+.main-navbar a {
+  text-transform: capitalize;
+  display: block;
+  padding: 1rem 0;
+  color: var(--clr-primaryColor);
+  letter-spacing: var(--spacing);
+  transition: var(--transition);
+}
+.main-navbar a:hover {
+  color: var(--clr-mainBlack);
+}
+@media screen and (min-width: 992px) {
+  .main-navbar ul {
+    max-width: 1170px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .main-navbar a {
+    text-align: center;
+  }
+}
