@@ -171,7 +171,7 @@ Cards
 .card-footer span {
   color: var(--clr-primaryColor);
 }
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
   .cards-center {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -182,4 +182,24 @@ Cards
   .cards-center {
     grid-template-columns: repeat(3, 1fr);
   }
+} */
+/* 
+1rem = 16px
+max-width = 1170px
+total gaps in 3 column layout = 2 * 2rem = 64px
+1170 - 64 = 1106
+1106 / 3 = 368.6667
+*/
+.cards-center {
+  display: grid;
+  column-gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(368px, 1fr));
+}
+
+/* 
+4 col layout
+(1170 - 96) / 4 = 268.5
+*/
+.cards-center {
+  grid-template-columns: repeat(auto-fill, minmax(268.5px, 1fr));
 }
